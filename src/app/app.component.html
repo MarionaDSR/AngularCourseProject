@@ -1,12 +1,11 @@
 <app-header 
-	(recipesChoiced)="onRecipesChoiced($event)"
-	(shoppingListChoiced)="onShoppingListChoiced($event)"
+	(featureSelected)="onNavigate($event)"
 	></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes *ngIf="showTab == 'recipes'"></app-recipes>
-      <app-shopping-list *ngIf="showTab == 'shoppingList'"></app-shopping-list>
+      <app-recipes *ngIf="loadedFeature === 'recipes'"></app-recipes>
+      <app-shopping-list *ngIf="loadedFeature !== 'recipes'"></app-shopping-list>
     </div>
   </div>
 </div>
