@@ -34,9 +34,7 @@ export class RecipesService {
         return this.recipes.slice(); // returns a new array
     }
 
-    toShoppingList(recipe: Recipe) {
-        console.log("toShoppingList with " + recipe.name);
-        //console.log(recipe.ingredients.length);
-        this.shoppingListService.addIngredients(recipe.ingredients);
+    toShoppingList(ingredients: Ingredient[]) {
+        this.shoppingListService.addIngredients(ingredients);
     }
 }
